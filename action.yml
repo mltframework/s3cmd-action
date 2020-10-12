@@ -1,0 +1,6 @@
+name: s3cmd
+description: s3cmd with your own arguments
+author: ddennedy
+runs:
+    using: docker
+    image: Dockerfile

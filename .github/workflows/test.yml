@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: 'A job to test my s3cmd action with "ls"'
+    steps:
+      - uses: mltframework/s3cmd-action@main
+        with:
+          args:
+            - --access_key=${{ secrets.AWS_ACCESS_KEY }}
+            - --secret_key=${{ secrets.AWS_SECRET_KEY }}
+            - ls
