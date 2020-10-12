@@ -7,15 +7,17 @@ for more information about the arguments.
 
 ### Upload One File
 
+Use `>-` to pass a multi-line string. Put the file name in quotes to handle spaces.
+
 ```
 uses: mltframework/s3cmd-action@v0
 with:
-  args:
-    - --access_key=${{ secrets.AWS_ACCESS_KEY }}
-    - --secret_key=${{ secrets.AWS_SECRET_KEY }}
-    - --acl-public
-    - --stop-on-error
-    - put
-    - local-file
-    - s3://bucket/prefix/
+  args: >-
+    --access_key=${{ secrets.AWS_ACCESS_KEY }}
+    --secret_key=${{ secrets.AWS_SECRET_KEY }}
+    --acl-public
+    --stop-on-error
+    put
+    "local file"
+    s3://bucket/prefix/
 ```
