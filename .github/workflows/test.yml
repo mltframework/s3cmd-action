@@ -7,4 +7,8 @@ jobs:
     steps:
       - uses: mltframework/s3cmd-action@main
         with:
-          args: --access_key=${{ secrets.AWS_ACCESS_KEY }} --secret_key=${{ secrets.AWS_SECRET_KEY }} ls
+          args: [
+            "--access_key=${{ secrets.AWS_ACCESS_KEY }}",
+            "--secret_key=${{ secrets.AWS_SECRET_KEY }}"
+            "ls"
+            ]
